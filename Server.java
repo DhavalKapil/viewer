@@ -13,8 +13,8 @@ class Server
 		{	ServerSocket ss = new ServerSocket(port);
 			for(int i = 0;i<files.length;i++)
 			{	Socket s = ss.accept();
-				Thread fileSenderThread = new FileSenderThread(s, files[i]);
-				fileSenderThread.start();
+				Thread fileReceiverThread = new FileReceiverThread(s, files[i]);
+				fileReceiverThread.start();
 			}
 		}
 		catch(Exception e)

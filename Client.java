@@ -24,8 +24,8 @@ class Client
 	{	try
 		{	for(int i = 0;i<files.length;i++)
 			{	Socket s = new Socket(host, port);
-				Thread fileReceiverThread = new FileReceiverThread(s, files[i]);
-				fileReceiverThread.start();
+				Thread fileSenderThread = new FileSenderThread(s, files[i]);
+				fileSenderThread.start();
 			}
 		}
 		catch(Exception e)
